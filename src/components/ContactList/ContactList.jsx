@@ -20,10 +20,14 @@ const ContactList = () => {
       {contacts.length !== 0 &&
         filteredContacts().map(({ id, name, number }) => (
           <li key={id} className={styles.item}>
-            <p className={styles.p}>
+            <p className={styles.paragraph}>
               {name}: {number}
             </p>
-            <button type="button" onClick={() => dispatch(deleteContact(id))}>
+            <button
+              className={styles.button}
+              type="button"
+              onClick={() => dispatch(deleteContact(id))}
+            >
               Delete
             </button>
           </li>
